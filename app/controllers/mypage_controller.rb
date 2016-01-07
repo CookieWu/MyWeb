@@ -3,7 +3,9 @@ class MypageController < ApplicationController
 	before_action :set_locale
 
 	def index
-		@personaldata = PersonalDatum.all
+		@personaldata = PersonalDatum.first
+		@title = CommonTitle.first
+		@months = Month.all
 		
 	end
 
