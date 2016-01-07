@@ -1,0 +1,12 @@
+
+.container-fluid
+	h1.test1 Test
+
+	h1 = t('personal.name')
+
+	- if !params[:locale] 
+		= link_to t('button.local'), root_path(locale: "zh-TW"), class: 'btn btn-primary', method: :get
+	- elsif params[:locale] && params[:locale] == "en"
+		= link_to t('button.local'), root_path(locale: "zh-TW"), class: 'btn btn-primary', method: :get
+	- else
+		= link_to t('button.local'), root_path(locale: "en"), class: 'btn btn-primary', method: :get
