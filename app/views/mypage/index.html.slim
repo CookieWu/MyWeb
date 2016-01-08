@@ -1,16 +1,15 @@
 
-.container-fluid
-	h1.test1 Test
-	
-	- local_value = (params[:locale]=="tw" ? "en" : "tw")
-	= link_to t('button.local'), root_path(locale: local_value), class: 'btn btn-primary'
+br
+- local_value = (params[:locale]=="tw" ? "en" : "tw")
+= link_to t('button.local'), root_path(locale: local_value), class: 'btn btn-primary'
 
-	h1 = "測試Hstore"
-	h3 = "名字"
-	h2 = @personaldata.try(:myname)
-	h3 = "技能"
-	h2 = @title.try(:title)
-	h3 = "月份"
+- @educations.each do |e|
+	h2 = e.content
 
-	- @months.each do |m|
-      	h2 = m.name
+- @jobs_cathay.try(:each) do |j|
+	h2 = j.project_name
+	h2 = j.project_description
+
+- @jobs_iii.try(:each) do |j|
+	h2 = j.project_name
+	h2 = j.project_description

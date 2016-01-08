@@ -111,7 +111,8 @@ ALTER SEQUENCE months_id_seq OWNED BY months.id;
 
 CREATE TABLE personal_data (
     id integer NOT NULL,
-    myname_translations hstore,
+    category character varying,
+    content_translations hstore,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -137,12 +138,79 @@ ALTER SEQUENCE personal_data_id_seq OWNED BY personal_data.id;
 
 
 --
+-- Name: projects; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE projects (
+    id integer NOT NULL,
+    category character varying,
+    company_translations hstore,
+    project_name_translations hstore,
+    project_description_translations hstore,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: projects_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE projects_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: projects_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE projects_id_seq OWNED BY projects.id;
+
+
+--
 -- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE schema_migrations (
     version character varying NOT NULL
 );
+
+
+--
+-- Name: skills; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE skills (
+    id integer NOT NULL,
+    category character varying,
+    category_name_translations hstore,
+    name character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: skills_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE skills_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: skills_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE skills_id_seq OWNED BY skills.id;
 
 
 --
@@ -164,6 +232,20 @@ ALTER TABLE ONLY months ALTER COLUMN id SET DEFAULT nextval('months_id_seq'::reg
 --
 
 ALTER TABLE ONLY personal_data ALTER COLUMN id SET DEFAULT nextval('personal_data_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY projects ALTER COLUMN id SET DEFAULT nextval('projects_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY skills ALTER COLUMN id SET DEFAULT nextval('skills_id_seq'::regclass);
 
 
 --
@@ -191,6 +273,22 @@ ALTER TABLE ONLY personal_data
 
 
 --
+-- Name: projects_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY projects
+    ADD CONSTRAINT projects_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: skills_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY skills
+    ADD CONSTRAINT skills_pkey PRIMARY KEY (id);
+
+
+--
 -- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -210,4 +308,8 @@ INSERT INTO schema_migrations (version) VALUES ('20160107040844');
 INSERT INTO schema_migrations (version) VALUES ('20160107082948');
 
 INSERT INTO schema_migrations (version) VALUES ('20160107083237');
+
+INSERT INTO schema_migrations (version) VALUES ('20160108021713');
+
+INSERT INTO schema_migrations (version) VALUES ('20160108062453');
 
