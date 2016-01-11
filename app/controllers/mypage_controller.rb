@@ -5,12 +5,14 @@ class MypageController < ApplicationController
 	def index
 		@personaldata = PersonalDatum.find_by category: "name"
 
-		@educations = PersonalDatum.where(category: "education").order(id: :desc)
+		@educations = Education.where(category: "education").order(id: :desc)
 
 		@jobs_cathay = Project.where(category: "cathay")
 		@jobs_iii = Project.where(category: "iii")
 
-		@title = CommonTitle.first
+		@study = CommonTitle.find_by category: "study"
+		@job_title = CommonTitle.find_by category: "job_title"
+
 		@months = Month.all
 
 		@frontend = Skill.where(category: "Frontend")

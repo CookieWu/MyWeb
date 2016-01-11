@@ -24,5 +24,8 @@ module Myweb
     config.active_record.raise_in_transactional_callbacks = true
     # for slim to use hstore
     config.active_record.schema_format = :sql
+
+    # icon圖compile
+    Rails.application.config.assets.precompile += %w( app/assets/image/icon/* )
   end
 end

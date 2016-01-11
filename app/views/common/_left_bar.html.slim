@@ -21,14 +21,16 @@
 				li.h4 = v.name
 
 
-	.left_bar_bottom
-		br
-	    = link_to "https://tw.linkedin.com/in/pinghsunwu1115", :target => "_blank" 
-	       i.fa.fa-linkedin-square.fa-3x
-	    = link_to "https://github.com/CookieWu", :target => "_blank" 
-	       i.fa.fa-github.fa-3x
-	    = link_to "http://stackoverflow.com/users/5133635/john", :target => "_blank" 
-	       i.fa.fa-stack-overflow.fa-3x
-	    = mail_to "johnwu2613@gmail.com"
-	       i.fa.fa-envelope-square.fa-3x
+	/ .left_bar_bottom
+	/ 	br
+	/     = link_to image_tag('icon/linkedin_icon.png', size: '40x40'), "https://tw.linkedin.com/in/pinghsunwu1115", :target => "_blank" 
+	/     = link_to image_tag('icon/github_icon.png', size: '40x40'), "https://github.com/CookieWu", :target => "_blank"
+	/     = link_to image_tag('icon/stackoverflow_icon.png', size: '40x40'), "http://stackoverflow.com/users/5133635/john", :target => "_blank" 
+	/     = mail_to "johnwu2613@gmail.com", image_tag('icon/mail_me_icon.png', size: '40x40')
+	    / = link_to "https://github.com/CookieWu", :target => "_blank" 
+	    /    i.fa.fa-github.fa-3x
+	    / = link_to "http://stackoverflow.com/users/5133635/john", :target => "_blank" 
+	    /    i.fa.fa-stack-overflow.fa-3x
+	    / = mail_to "johnwu2613@gmail.com"
+	    /    i.fa.fa-envelope-square.fa-3x
 

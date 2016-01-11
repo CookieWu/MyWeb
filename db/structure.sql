@@ -49,6 +49,7 @@ SET default_with_oids = false;
 
 CREATE TABLE common_titles (
     id integer NOT NULL,
+    category character varying,
     title_translations hstore,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
@@ -72,6 +73,42 @@ CREATE SEQUENCE common_titles_id_seq
 --
 
 ALTER SEQUENCE common_titles_id_seq OWNED BY common_titles.id;
+
+
+--
+-- Name: educations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE educations (
+    id integer NOT NULL,
+    category character varying,
+    content_translations hstore,
+    s_year integer,
+    s_month_translations hstore,
+    e_year integer,
+    e_month_translations hstore,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: educations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE educations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: educations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE educations_id_seq OWNED BY educations.id;
 
 
 --
@@ -147,6 +184,10 @@ CREATE TABLE projects (
     company_translations hstore,
     project_name_translations hstore,
     project_description_translations hstore,
+    s_year integer,
+    s_month_translations hstore,
+    e_year integer,
+    e_month_translations hstore,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -224,6 +265,13 @@ ALTER TABLE ONLY common_titles ALTER COLUMN id SET DEFAULT nextval('common_title
 -- Name: id; Type: DEFAULT; Schema: public; Owner: -
 --
 
+ALTER TABLE ONLY educations ALTER COLUMN id SET DEFAULT nextval('educations_id_seq'::regclass);
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: -
+--
+
 ALTER TABLE ONLY months ALTER COLUMN id SET DEFAULT nextval('months_id_seq'::regclass);
 
 
@@ -254,6 +302,14 @@ ALTER TABLE ONLY skills ALTER COLUMN id SET DEFAULT nextval('skills_id_seq'::reg
 
 ALTER TABLE ONLY common_titles
     ADD CONSTRAINT common_titles_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: educations_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY educations
+    ADD CONSTRAINT educations_pkey PRIMARY KEY (id);
 
 
 --
@@ -312,4 +368,6 @@ INSERT INTO schema_migrations (version) VALUES ('20160107083237');
 INSERT INTO schema_migrations (version) VALUES ('20160108021713');
 
 INSERT INTO schema_migrations (version) VALUES ('20160108062453');
+
+INSERT INTO schema_migrations (version) VALUES ('20160111054524');
 
