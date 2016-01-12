@@ -19,7 +19,7 @@ Education.create(
 	s_month_en: 'Sep',
 	s_month_tw: '九月',
 	e_year: 2011,
-	e_month_en: 'June',
+	e_month_en: 'Jun',
 	e_month_tw: '六月',
 	)
 Education.create(
@@ -30,7 +30,7 @@ Education.create(
 	s_month_en: 'Sep',
 	s_month_tw: '九月',
 	e_year: 2013,
-	e_month_en: 'June',
+	e_month_en: 'Jun',
 	e_month_tw: '六月',
 	)
 
@@ -74,11 +74,12 @@ Project.create(
 	project_name_tw: "DevOps 系統", 
 	project_description_tw: "建置DevOps全方位整合網站，與Redmine, Gitlab, Jenkins 及 Puppet等系統進行整合，提供所內使用。",
 	s_year: 2015,
-	s_month_en: 'Jun',
-	s_month_tw: '六月',
-	e_year: 2015,
-	e_month_en: 'Oct',
-	e_month_tw: '十月',)
+	s_month_en: 'Oct',
+	s_month_tw: '十月',
+	e_year: 2016,
+	e_month_en: 'Feb',
+	e_month_tw: '二月',
+	)
 
 Project.create(
 	category: "iii",
@@ -89,8 +90,9 @@ Project.create(
 	project_name_tw: "Beacon 管理後台", 
 	project_description_tw: "設計簡易Beacon佈署/推播訊息管理平台，使用者可自由上傳檔案/地圖，透過本系統所提供之Android APP佈署Beacon, 並透過介面設定推播訊息排程。",
 	s_year: 2015,
-	s_month_en: 'Oct',
-	s_month_tw: '十月',
-	e_year: 2016,
-	e_month_en: 'Feb',
-	e_month_tw: '二月',)
+	s_month_en: 'Jun',
+	s_month_tw: '六月',
+	e_year: 2015,
+	e_month_en: 'Oct',
+	e_month_tw: '十月',
+	)

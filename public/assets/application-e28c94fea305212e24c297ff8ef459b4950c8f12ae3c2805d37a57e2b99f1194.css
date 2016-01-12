@@ -1,3 +1,77 @@
+/* line 1, /Users/john/projects/myweb/app/assets/stylesheets/content.scss */
+#content {
+  background-color: lightgray;
+  display: inline-block;
+  border: 1px solid #ededf0;
+  border-radius: 3px;
+  box-shadow: 3px 3px;
+}
+@charset "UTF-8";
+/* icon 圖示格式*/
+/* line 3, /Users/john/projects/myweb/app/assets/stylesheets/icon.scss */
+.fa-caret-square-o-down {
+  cursor: n-resize;
+}
+
+/* line 6, /Users/john/projects/myweb/app/assets/stylesheets/icon.scss */
+.fa-linkedin-square {
+  color: #0044BB;
+}
+
+/* line 9, /Users/john/projects/myweb/app/assets/stylesheets/icon.scss */
+.fa-github {
+  color: #fef;
+}
+
+/* line 12, /Users/john/projects/myweb/app/assets/stylesheets/icon.scss */
+.fa-stack-overflow {
+  color: #FFCC22;
+}
+
+/* line 15, /Users/john/projects/myweb/app/assets/stylesheets/icon.scss */
+.fa-envelope-square {
+  color: #77DDFF;
+}
+
+/* line 18, /Users/john/projects/myweb/app/assets/stylesheets/icon.scss */
+.fa-download {
+  color: #5599FF;
+}
+/* line 2, /Users/john/projects/myweb/app/assets/stylesheets/left_bar.scss */
+.left_bar {
+  text-align: center;
+  background-color: #000;
+  background-repeat: repeat-y;
+  color: #fff;
+  height: 60vw;
+}
+
+/* line 11, /Users/john/projects/myweb/app/assets/stylesheets/left_bar.scss */
+.left_bar_content {
+  text-align: left;
+  margin-left: 15%;
+}
+
+/* line 16, /Users/john/projects/myweb/app/assets/stylesheets/left_bar.scss */
+.left_bar_bottom {
+  position: fixed;
+  margin-left: 5%;
+  bottom: 5%;
+}
+/* line 1, /Users/john/projects/myweb/app/assets/stylesheets/top_bar.scss */
+.top_bar {
+  color: #fff;
+  position: fixed;
+  text-align: center;
+  margin-left: 40%;
+}
+
+/* line 8, /Users/john/projects/myweb/app/assets/stylesheets/top_bar.scss */
+.language_button {
+  float: right;
+  display: inline-block;
+  width: 100px;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -15,9 +89,25 @@
 
 
  */
-/* line 20, /Users/john/projects/myweb/app/assets/stylesheets/application.css.scss */
-.test1 {
-  font-size: 40px;
+/* line 25, /Users/john/projects/myweb/app/assets/stylesheets/application.css.scss */
+#profile_link {
+  top: 50px;
+}
+
+/* line 29, /Users/john/projects/myweb/app/assets/stylesheets/application.css.scss */
+.big_title {
+  display: inline-block;
+  text-indent: +0em;
+}
+
+/* line 33, /Users/john/projects/myweb/app/assets/stylesheets/application.css.scss */
+.content_title {
+  text-indent: +1em;
+}
+
+/* line 37, /Users/john/projects/myweb/app/assets/stylesheets/application.css.scss */
+.content_style {
+  margin-left: +2em;
 }
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)

@@ -1,5 +1,4 @@
 .top_bar
-	br
     = link_to image_tag('icon/linkedin_icon.png', size: '40x40'), "https://tw.linkedin.com/in/pinghsunwu1115", :target => "_blank" 
     = link_to image_tag('icon/github_icon_black.png', size: '40x40'), "https://github.com/CookieWu", :target => "_blank"
     = link_to image_tag('icon/stackoverflow_icon.png', size: '40x40'), "http://stackoverflow.com/users/5133635/john", :target => "_blank" 
@@ -12,7 +11,7 @@ br
 	='
 	i.fa.fa-language.fa-1x
 	
-h2 = @study.title
+h2#big_title = @study.title
 .col-xs-12
 	- @educations.each do |e|
 		.col-xs-12
@@ -28,23 +27,8 @@ h2 = @study.title
 				li.h4.big_title = e.e_month
 				br
 
-h2 = @job_title.title
-.col-xs-12
-	= image_tag('icon/Cathay.png', size: '30x30')
-	li.h3.big_title = @jobs_cathay.first.company 
-	- @jobs_cathay.try(:each) do |j|
-		.col-xs-12
-			h3.content_title = j.project_name
-		.col-xs-12
-			.col-xs-8
-				li.h4.big_title = j.project_description
-			.col-xs-4
-				li.h4.big_title = j.s_year
-				li.h4.big_title = j.s_month
-				= '~'
-				li.h4.big_title = j.e_year
-				li.h4.big_title = j.e_month
-				br
+h2#big_title = @job_title.title
+
 .col-xs-12
 	= image_tag('icon/III.png', size: '30x30')
 	li.h3.big_title = @jobs_iii.first.company
@@ -53,7 +37,24 @@ h2 = @job_title.title
 		.col-xs-12
 			h3.content_title = j.project_name
 		.col-xs-12
-			.col-xs-8
+			#content.col-xs-8
+				li.h4.big_title = j.project_description
+			.col-xs-4
+				li.h4.big_title = j.s_year
+				li.h4.big_title = j.s_month
+				= '~'
+				li.h4.big_title = j.e_year
+				li.h4.big_title = j.e_month
+				br
+
+.col-xs-12
+	= image_tag('icon/Cathay.png', size: '30x30')
+	li.h3.big_title = @jobs_cathay.first.company 
+	- @jobs_cathay.try(:each) do |j|
+		.col-xs-12
+			h3.content_title = j.project_name
+		.col-xs-12
+			#content.col-xs-8
 				li.h4.big_title = j.project_description
 			.col-xs-4
 				li.h4.big_title = j.s_year
