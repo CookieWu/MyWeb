@@ -11,3 +11,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+/public/assets
+
+*.log
+*.sql
+*.sqlite
