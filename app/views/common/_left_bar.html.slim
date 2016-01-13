@@ -17,6 +17,9 @@
 			h3 = @server.first.category_name
 			- @server.each do |s|
 				li.h4 = s.name
+			h3 = @db.first.category_name
+			- @db.each do |v|
+				li.h4 = v.name
 			h3 = @version.first.category_name
 			- @version.each do |v|
 				li.h4 = v.name

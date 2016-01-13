@@ -27,7 +27,7 @@ development:
   database: myweb_development
 
   username: john
-  password:
+  password: 
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.

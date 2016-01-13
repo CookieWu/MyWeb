@@ -1,6 +1,6 @@
 class MypageController < ApplicationController
 
-	before_action :set_locale
+	before_action :set_locale, only: [:index]
 
 	def index
 		@personaldata = PersonalDatum.find_by category: "name"
@@ -19,6 +19,7 @@ class MypageController < ApplicationController
 		@backend = Skill.where(category: "Backend")
 		@server = Skill.where(category: "Server")
 		@version = Skill.where(category: "Version")
+		@db = Skill.where(category: "Database")
 
 		# FB相關
 		@fb_link = "https://www.facebook.com/app_scoped_user_id/779390195413136/"

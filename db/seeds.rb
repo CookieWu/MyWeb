@@ -9,6 +9,8 @@
 # PersonalDatum.create!( myname: "吳秉勳" )
 
 # 個人資料
+User.create(email: "johnwu2613@gmail.com", name: "吳秉勳") # , password: "771115"
+
 PersonalDatum.create(category: "name", content_en: "Ping-Hsun Wu", content_tw: "吳秉勳")
 
 Education.create(
@@ -48,6 +50,8 @@ Skill.create(category: "Frontend", category_name_en: "Frontend", category_name_t
 Skill.create(category: "Backend", category_name_en: "Backend", category_name_tw: "後端", name: "Ruby on rails")
 Skill.create(category: "Server", category_name_en: "Server", category_name_tw: "伺服器", name: "Linux Server")
 Skill.create(category: "Version", category_name_en: "Version", category_name_tw: "版本控制", name: "Git")
+Skill.create(category: "Database", category_name_en: "Database", category_name_tw: "資料庫", name: "MySQL")
+Skill.create(category: "Database", category_name_en: "Database", category_name_tw: "資料庫", name: "PostgreSQL")
 
 # 專案
 Project.create(

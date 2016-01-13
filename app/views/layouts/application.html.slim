@@ -2,15 +2,14 @@ doctype html
 html
   head
     title MyWeb
+    meta http-equiv="Content-Type" content="text/html; charset=utf-8"
+    meta name="description" content="resume"
+    meta name="keywords" content="Ping-hsun Wu, 吳秉勳"
+    meta name="author" content="Ping-hsun Wu"
+    
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
 
   body
-    .row
-      .col-xs-3
-      	= render 'common/left_bar'
-      .col-xs-9
-        .container-fluid
-    		  = yield
-      = render 'common/right_bar'
+  	= yield

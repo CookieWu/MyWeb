@@ -2,7 +2,13 @@ Rails.application.routes.draw do
 
   root 'mypage#index'
 
-  get '/:locale' => 'mypage#index'
+  get '/me' => 'mypage#index'
+  # get '/:locale' => 'mypage#index'
+
+  get '/login' => 'users#new'
+  post '/login' => 'users#create'
+
+  resources :skills
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

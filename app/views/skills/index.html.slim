@@ -1,0 +1,24 @@
+.container-fluid
+	= "skill"
+	.table-responsive
+		table.table.table-striped
+			thead
+	  		th.h1 ="技能類別"
+	  		th.h1 ="技能名稱"
+	  		th.h1 ="修改"
+	  		th.h1 ="刪除"
+			tbody
+				- @skills.each do |s|
+					tr
+						td = s.category
+						td = s.name
+						td = link_to edit_skill_path(s), class: 'btn btn-default'
+								.i.fa.fa-pencil-square-o.fa-1x
+						td = link_to edit_skill_path(s), class: 'btn btn-default'
+								.i.fa.fa-trash.fa-1x
+
+
+	= link_to root_path, class: 'btn btn-default'
+      = "Back"
+      ='
+      i.fa.fa-reply.fa-1x
