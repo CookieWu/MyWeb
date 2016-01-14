@@ -1,1 +1,5 @@
-= "@@"
+= simple_form_for(@result_set) do |f| 
+  = f.number_field :project_id, style: 'display:none', value: @project_id if params[:project_id]
+  = f.input :delivery_date, label: '預計送出審查日', as: :string, input_html: { class: 'datepicker' }
+  = f.button :submit
+  = link_to '取消', '/back' ,class: 'btn btn-default'

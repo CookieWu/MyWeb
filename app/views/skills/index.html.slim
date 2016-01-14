@@ -1,5 +1,5 @@
-.container-fluid
-	= "skill"
+.container-fluid.center_set
+	h1 = "skill"
 	.table-responsive
 		table.table.table-striped
 			thead
@@ -12,9 +12,9 @@
 					tr
 						td = s.category
 						td = s.name
-						td = link_to edit_skill_path(s), class: 'btn btn-default'
+						td.function_format = link_to edit_skill_path(s), class: 'btn btn-default'
 								.i.fa.fa-pencil-square-o.fa-1x
-						td = link_to edit_skill_path(s), class: 'btn btn-default'
+						td.function_format = link_to edit_skill_path(s), class: 'btn btn-default'
 								.i.fa.fa-trash.fa-1x
 
 

@@ -1,9 +1,9 @@
 br
 .login_page.col-md-4.col-md-offset-4
-  = form_tag login_path 
-    = text_field_tag :email, nil, class: "form-control", placeholder: "請輸入email."
+  = simple_form_for(@user, url: login_path) do |f| 
+    = f.input :email, label: 'Email:', placeholder: "請輸入email."
     
-    = submit_tag "Login", method: :post, class: 'btn btn-default'
+    = f.button :submit
     = link_to root_path, class: 'btn btn-default'
       = "Back"
       ='
