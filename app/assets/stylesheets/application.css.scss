@@ -61,10 +61,18 @@
     // background: #000; 
   }
 
+.table, td {
+   border: 1px solid gray;
+}
+
  .function_format {
  	width: 8%;
  }
 
  .center_set {
  	text-align: center;
+ }
+
+ .content_set {
+    
  }

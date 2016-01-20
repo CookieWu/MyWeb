@@ -1,16 +1,14 @@
-.col-md-3
-	= render 'common/left_bar'
-.container-fluid.col-md-9
+.col-xs-3
+	.row
+		= render 'common/left_bar'
+.col-xs-9.container-fluid
+	.row
 	br
 	.login_button = link_to login_path, class: 'btn btn-success'
 		= "Login" 
 		='
 		i.fa.fa-user.fa-1x
-	- local_value = (params[:locale]=="tw" ? "en" : "tw")
-	.language_button = link_to root_path(locale: local_value), class: 'btn btn-primary'
-		=t('button.local') 
-		='
-		i.fa.fa-language.fa-1x
+	= render 'common/language_button'
 		
 	h2#big_title = @study.title
 	.col-xs-12
@@ -63,7 +61,7 @@
 					= '~'
 					li.h4.big_title = j.e_year
 					li.h4.big_title = j.e_month
-					br
+br
 
 = render 'common/right_bar'
 

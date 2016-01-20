@@ -1,4 +1,4 @@
-.container-fluid.center_set
+.container-fluid.center_set.col-xs-offset-2.col-xs-8
 	h1 = "skill"
 	.table-responsive
 		table.table.table-striped
@@ -10,13 +10,16 @@
 			tbody
 				- @skills.each do |s|
 					tr
-						td = s.category
+						td = s.category_name
 						td = s.name
-						td.function_format = link_to edit_skill_path(s), class: 'btn btn-default'
-								.i.fa.fa-pencil-square-o.fa-1x
-						td.function_format = link_to edit_skill_path(s), class: 'btn btn-default'
-								.i.fa.fa-trash.fa-1x
-
+						td.function_format = link_to edit_skill_path(s)
+								.i.fa.fa-pencil-square-o.fa-2x
+						td.function_format = link_to s, method: :delete, data: { confirm: '確定刪除：' + s.name.to_s + '技能？'}
+								.i.fa.fa-trash.fa-2x
+	= link_to new_skill_path, class: 'btn btn-default'
+      = "New"
+      ='
+      i.fa.fa-plus.fa-1x
 
 	= link_to root_path, class: 'btn btn-default'
       = "Back"

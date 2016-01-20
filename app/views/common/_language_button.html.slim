@@ -1,0 +1,5 @@
+- local_value = (params[:locale]=="tw" ? "en" : "tw")
+.language_button = link_to root_path(locale: local_value), class: 'btn btn-primary'
+	=t('button.local') 
+	='
+	i.fa.fa-language.fa-1x
