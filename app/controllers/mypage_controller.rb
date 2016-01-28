@@ -1,6 +1,6 @@
 class MypageController < ApplicationController
 
-	before_action :set_locale, only: [:index]
+	# before_action :set_locale, only: [:index]
 
 	def index
 		@personaldata = PersonalDatum.find_by category: "name"

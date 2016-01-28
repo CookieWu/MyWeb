@@ -51,18 +51,12 @@
     color: white;
 
     background: #000; 
+    border: 1px solid #000;
   }
+
 .table td {
-    // font-family: Georgia;
-    // font-size: 15px;
-    text-align: center;
-    // color: white;
-
-    // background: #000; 
-  }
-
-.table, td {
    border: 1px solid gray;
+   text-align: center;
 }
 
  .function_format {

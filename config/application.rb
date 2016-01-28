@@ -27,5 +27,7 @@ module Myweb
 
     # icon圖compile
     Rails.application.config.assets.precompile += %w( app/assets/image/icon/* )
+    # 自動載入lib
+    # config.autoload_paths += Dir["#{config.root}/lib", "#{config.root}/lib/**/"]
   end
 end
