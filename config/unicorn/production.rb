@@ -1,4 +1,4 @@
-root = "/home/john//current"
+root = "/home/john/MyWeb"
 working_directory root
 
 pid "#{root}/tmp/pids/unicorn.pid"
