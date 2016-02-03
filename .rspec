@@ -1,2 +1,6 @@
 --color
 --require spec_helper
+--require rails_helper
+--tty
+--format p
+--profile

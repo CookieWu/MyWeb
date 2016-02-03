@@ -1,10 +1,10 @@
-require "spec_helper"
-require 'Skill'
+# require "rails_helper"
+# require 'Skill'
 
-describe Skill do
-  before(:all) do
-    @skill = Skill.new
-  end
+describe Skill, type: :model do
+  # before(:all) do
+  #   @skill = Skill.create!
+  # end
 
 	# it "create new skill" do
 	# 	# skill = Skill.new
@@ -26,15 +26,23 @@ describe Skill do
   # let(:skill) { Skill.new }
   # subject { skill }
 
-  it "skill name should good" do
-    # skill.name { :should == "qq111" }
-    @skill.name = :expect == "qq"
+  it "test test" do
+  end
+  it "skill columns" do
+    columns = Skill.column_names
+    expect(columns).to include("id")
   end
 
-  it "skill name" do
-    # skill.status { :should == "oh!" }
-    @skill.status = :should == "oh"
+  it "skill have name?" do
+    skill = Skill.create!(name: "John")
+    # skill.should validate_presence_of_name
+    expect(skill).to eq(Skill.last)
   end
+
+  # it "skill name" do
+  #   # skill.status { :should == "oh!" }
+  #   @skill.status = :should == "oh"
+  # end
 end
 
 
